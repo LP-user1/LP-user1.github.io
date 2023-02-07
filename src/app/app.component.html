@@ -2,7 +2,7 @@
 <header class="header">
   <div class="header-container">
     <a href="/">PRASATH <span>( LP )</span></a>
-    <div class="header-container--menu menu">
+    <div class="header-container--menu menu" (click)="navToggle(true)">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="ionicon"
@@ -18,7 +18,23 @@
         />
       </svg>
     </div>
-    <nav class="header-container--item">
+    <nav id="nav" class="header-container--item">
+      <div (click)="navToggle(false)" class="cls-nav">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="ionicon"
+          viewBox="0 0 512 512"
+        >
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="32"
+            d="M368 368L144 144M368 144L144 368"
+          />
+        </svg>
+      </div>
       <ul class="nav">
         <li class="nav-item">
           <a href="/" class="nav-item-link page-link">Home</a>
@@ -40,7 +56,7 @@
           >
         </li>
       </ul>
-      <ul class="nav">
+      <ul class="nav social-link-section">
         <li class="nav-item">
           <a
             href="https://instagram.com/prasa_th_/"
