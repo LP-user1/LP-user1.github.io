@@ -7,11 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'LP | Portfolio';
+  showNav: boolean = false;
   navToggle(action: boolean): void {
     if (action === true) {
-      alert('hi');
+      this.showNav = true;
     } else {
-      alert('bye');
+      this.showNav = false;
     }
   }
 }
