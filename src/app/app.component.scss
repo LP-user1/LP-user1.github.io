@@ -4,8 +4,9 @@
 .header {
   width: 100%;
   padding: .6rem 8rem;
-  background-color: #fff;
-  transition: 300ms;
+  // background-color: rgba(0, 0, 0, 0.953);
+  background-color: transparent;
+  transition: 300ms ease-in-out;
   z-index: 10;
 
   @include mixin.responsive("xs") {
@@ -17,19 +18,21 @@
   }
 
   &.nav-sticky {
-    transition: 300ms;
     position: sticky;
     top: 0;
     left: 0;
-    box-shadow: 0 0 5px #00000031;
+    background-color: rgba(0, 0, 0, 0.953);
+    box-shadow: 0 0 5px #ffffff5c;
+    transition: 300ms ease-in-out;
 
     @include mixin.responsive("xs") {
-      background: linear-gradient(to right, rgba(255, 255, 255, 0.935), rgba(255, 255, 255, 0.846));
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.953), rgba(0, 0, 0, 0.593));
     }
 
     @include mixin.responsive("sm", "sm-md") {
-      background: linear-gradient(to right, rgba(255, 255, 255, 0.935), rgba(255, 255, 255, 0.846));
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.953), rgba(0, 0, 0, 0.593));
     }
+
   }
 
   &-container {
@@ -40,14 +43,15 @@
     & > a {
       font-family: "Shadows Into Light", cursive;
       font-size: 1.4rem;
-      color: #000000ed;
+      // color: #000;
+      color: #ffffffdc;
 
       & > span {
         font-size: .9rem;
       }
 
       &:hover {
-        color: dodgerblue;
+        color: rgba(169, 211, 253, 0.927);
         transition: 300ms;
       }
     }
@@ -71,6 +75,7 @@
 
       & > svg {
         width: 1.5rem;
+        color: #fff;
       }
     }
 
@@ -93,8 +98,10 @@
         justify-content: space-between;
         align-items: center;
         gap: 0;
+        overflow-y: auto;
         z-index: 20;
-        box-shadow: 5px 12px 17px 0px rgb(0 0 0 / 38%);
+        // box-shadow: 5px 12px 17px 0px rgb(0 0 0 / 38%);
+        box-shadow: 5px 12px 17px 0px rgba(255, 255, 255, 0.764);
         transition: 400ms ease-in-out;
 
         &.show-nav {
@@ -115,14 +122,16 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        gap: 0;
+        gap: 2rem;
         z-index: 20;
-        box-shadow: 5px 12px 17px 0px rgb(0 0 0 / 38%);
+        // box-shadow: 5px 12px 17px 0px rgb(0 0 0 / 38%);
+        box-shadow: 5px 12px 17px 0px rgba(255, 255, 255, 0.598);
         transition: 400ms ease-in-out;
 
         &.show-nav {
           right: 0 !important;
           transition: 400ms ease-in-out;
+          overflow-y: auto;
         }
       }
 
@@ -178,9 +187,18 @@
 
           & a {
             padding: .5rem .7rem;
-            color: #000;
+            // color: #000;
+            color: #ffffffdc;
             display: flex;
             align-items: center;
+
+            @include mixin.responsive("xs") {
+              color: #000;
+            }
+
+            @include mixin.responsive("sm", "sm-md") {
+              color: #000;
+            }
 
             &.page-link {
               font-size: .96rem;
@@ -192,7 +210,16 @@
               }
 
               &:hover:not(.mail-link, .active) {
-                color: rgba(0, 0, 0, 0.546);
+                // color: rgba(0, 0, 0, 0.546);
+                color: #ffffffb1;
+
+                @include mixin.responsive("xs") {
+                  color: rgba(0, 0, 0, 0.546);
+                }
+
+                @include mixin.responsive("sm", "sm-md") {
+                  color: rgba(0, 0, 0, 0.546);
+                }
               }
 
               &:not(.mail-link)::after {
@@ -202,7 +229,7 @@
                 left: 45%;
                 width: 10%;
                 height: .2rem;
-                border-radius: .6rem;
+                border-radius: 1rem 1rem 0 0;
                 background-color: transparent;
                 transition: 400ms;
               }
@@ -250,6 +277,8 @@
             svg {
               width: 1.5rem;
               height: 1.5rem;
+              background-color: #fff;
+              border-radius: .2rem;
             }
 
             &:hover {
@@ -265,8 +294,18 @@
 
 /* header end */
 
-/* hero area */
-.hero-area {
-  padding: 1rem;
+/* main */
+main {
+  width: 100%;
 
+  /* hero area */
+  .hero-area {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.272), rgba(0, 0, 0, 0.331)), url('../assets/laptop.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 95vh;
+
+  }
 }

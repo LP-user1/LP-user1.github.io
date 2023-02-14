@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'LP | Portfolio';
   showNav: boolean = false;
+  navSticky: boolean = false;
+  @HostListener('window:scroll', ['$event']) onscroll() {
+    if (window.scrollY > 160) {
+      this.navSticky = true;
+    } else {
+      this.navSticky = false;
+    }
+  }
   navToggle(action: boolean): void {
     if (action === true) {
       this.showNav = true;
