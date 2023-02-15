@@ -1,10 +1,10 @@
+@use "../assets/scss/abstract/variables" as var;
 @use "../assets/scss/abstract/mixins" as mixin;
 
 /* header */
 .header {
   width: 100%;
   padding: .6rem 8rem;
-  // background-color: rgba(0, 0, 0, 0.953);
   background-color: transparent;
   transition: 300ms ease-in-out;
   z-index: 10;
@@ -41,7 +41,7 @@
     align-items: center;
 
     & > a {
-      font-family: "Shadows Into Light", cursive;
+      font-family: var.$font-shadow;
       font-size: 1.4rem;
       // color: #000;
       color: #ffffffdc;
@@ -300,12 +300,176 @@ main {
 
   /* hero area */
   .hero-area {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.272), rgba(0, 0, 0, 0.331)), url('../assets/laptop.jpg');
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.757), rgba(0, 0, 0, 0.663)), url('../assets/laptop.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    min-height: 95vh;
+    min-height: 92vh;
+    max-height: 93vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 
+    @include mixin.responsive("xs") {
+      gap: 6rem;
+    }
+
+    @include mixin.responsive("sm", "sm-md") {
+      gap: 2rem;
+    }
+
+
+    &--content {
+      padding: 8rem 0 0 8rem;
+
+      @include mixin.responsive("xs") {
+        padding: 8rem 0 0 2rem;
+
+      }
+
+      @include mixin.responsive("sm", "sm-md") {
+        padding: 2rem 0 0 9rem;
+
+      }
+
+      p.greet {
+        font-family: var.$font-shadow;
+        font-size: 3rem;
+        color: #fff;
+
+        @include mixin.responsive("xs") {
+          font-size: 1.5rem;
+        }
+
+        @include mixin.responsive("sm", "sm-md") {
+          font-size: 1.7rem;
+        }
+      }
+
+      div.intro-txt {
+        color: #ffffff;
+
+        p.static {
+          font-size: 2.5rem;
+
+          @include mixin.responsive("xs") {
+            font-size: 1.5rem;
+          }
+
+          @include mixin.responsive("sm", "sm-md") {
+            font-size: 1.7rem;
+          }
+
+          span.name {
+            font-size: 3rem;
+            font-weight: 700;
+            color: transparent;
+            background: -webkit-linear-gradient(to right, #acb6e5, #86fde8);
+            background: linear-gradient(to right, #acb6e5, #86fde8);
+            -webkit-background-clip: text !important;
+            background-clip: text;
+            -webkit-text-fill-color: transparent !important;
+
+            @include mixin.responsive("xs") {
+              font-size: 1.8rem;
+            }
+
+            @include mixin.responsive("sm", "sm-md") {
+              font-size: 2rem;
+            }
+          }
+        }
+
+      }
+
+      div.firstC {
+        p {
+          position: absolute;
+          font-size: 3.3rem;
+          font-weight: 700;
+          color: #fff;
+
+          @include mixin.responsive("xs") {
+            font-size: 2rem;
+          }
+
+          @include mixin.responsive("sm", "sm-md") {
+            font-size: 2.2rem;
+          }
+
+          &:nth-child(1) {
+            color: transparent;
+            -webkit-text-stroke: .2px #fff;
+          }
+
+          &:nth-child(2) {
+            background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);
+            background: linear-gradient(to right, #eef2f3, #8e9eab);
+            -webkit-background-clip: text !important;
+            background-clip: text;
+            -webkit-text-fill-color: transparent !important;
+            animation: wave 10s linear infinite;
+          }
+
+          @keyframes wave {
+
+            0%,
+            100% {
+              clip-path: polygon(0 22%, 10% 23%, 21% 25%, 32% 29%, 40% 36%, 48% 46%, 60% 48%, 73% 48%, 81% 45%, 79% 31%, 100% 28%, 100% 100%, 0 100%);
+            }
+
+            50% {
+              clip-path: polygon(0 67%, 8% 57%, 19% 49%, 30% 44%, 39% 36%, 48% 31%, 58% 31%, 70% 34%, 80% 36%, 93% 45%, 100% 58%, 100% 100%, 0 100%);
+            }
+
+          }
+        }
+      }
+    }
+
+    &--bottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      gap: .5rem;
+      animation: jump 2s linear infinite;
+
+      @include mixin.responsive("xs") {
+        margin-top: 3.5rem;
+      }
+
+      @include mixin.responsive("sm", "sm-md") {
+        // margin-top: 3.5rem;
+      }
+
+      &-text {
+        color: #ffffffc3;
+        font-size: 1rem;
+      }
+
+      & > svg {
+        color: #ffffffc3;
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+
+    @keyframes jump {
+
+      0%,
+      100% {
+        transform: translateY(0%);
+      }
+
+      50% {
+        transform: translateY(20%);
+      }
+
+
+    }
   }
 }
