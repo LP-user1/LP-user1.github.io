@@ -515,13 +515,43 @@ main {
 
     @include mixin.responsive("xs") {
       & {
-        padding: 2rem .8rem;
+        padding: 2rem 1rem;
       }
     }
 
     @include mixin.responsive("xs", $orientation: "landscape") {
       & {
         padding: 2rem 1rem;
+      }
+    }
+
+    @include mixin.responsive("sm") {
+      & {
+        padding: 2rem 1rem;
+      }
+    }
+
+    @include mixin.responsive("md") {
+      & {
+        padding: 2rem 1.2rem;
+      }
+    }
+
+    @include mixin.responsive("lg") {
+      & {
+        padding: 2rem 2.5rem;
+      }
+    }
+
+    @include mixin.responsive("xl") {
+      & {
+        padding: 2rem 5rem;
+      }
+    }
+
+    @include mixin.responsive("xxl") {
+      & {
+        padding: 2rem 9rem;
       }
     }
   }
@@ -579,11 +609,35 @@ main {
           }
         }
 
+        @include mixin.responsive("sm") {
+          & {
+            flex-direction: column;
+          }
+        }
+
+        @include mixin.responsive("md") {
+          & {
+            flex-direction: row;
+          }
+        }
+
         img {
           width: 10rem;
           border-radius: .5rem;
           object-fit: cover;
           aspect-ratio: 2/3;
+
+          @include mixin.responsive("md") {
+            & {
+              width: 11rem;
+            }
+          }
+
+          @include mixin.responsive("lg") {
+            & {
+              width: 13rem;
+            }
+          }
 
         }
 
@@ -599,6 +653,24 @@ main {
                 font-size: .85rem;
               }
             }
+
+            @include mixin.responsive("sm") {
+              & {
+                font-size: .90rem;
+              }
+            }
+
+            @include mixin.responsive("md") {
+              & {
+                font-size: 1rem;
+              }
+            }
+
+            @include mixin.responsive("lg") {
+              & {
+                font-size: 1.2rem;
+              }
+            }
           }
 
           div.btn-sec {
@@ -611,8 +683,26 @@ main {
               }
             }
 
+            @include mixin.responsive("sm") {
+              & {
+                gap: .9rem;
+              }
+            }
+
+            @include mixin.responsive("md") {
+              & {
+                gap: 1.2rem;
+              }
+            }
+
+            @include mixin.responsive("lg") {
+              & {
+                gap: 1.6rem;
+              }
+            }
+
             a.cv {
-              padding: .5rem 1.2rem;
+              padding: .4rem 1.2rem;
               border-radius: .4rem;
               transition: 300ms ease-in-out;
 
@@ -620,6 +710,27 @@ main {
                 & {
                   padding: .4rem .7rem;
                   font-size: .8rem;
+                }
+              }
+
+              @include mixin.responsive("sm") {
+                & {
+                  padding: .4rem .9rem;
+                  font-size: .9rem;
+                }
+              }
+
+              @include mixin.responsive("md") {
+                & {
+                  padding: .4rem 1rem;
+                  font-size: 1rem;
+                }
+              }
+
+              @include mixin.responsive("lg") {
+                & {
+                  padding: .4rem 1rem;
+                  font-size: 1.1rem;
                 }
               }
 
@@ -685,6 +796,36 @@ main {
         }
       }
 
+      @include mixin.responsive("sm") {
+        & {
+          padding: 2rem .3rem;
+          grid-template-columns: repeat(1, 1fr);
+          gap: .7rem;
+        }
+      }
+
+      @include mixin.responsive("md") {
+        & {
+          padding: 2rem .8rem;
+          grid-template-columns: repeat(2, 1fr);
+          gap: .7rem;
+        }
+      }
+
+      @include mixin.responsive("lg") {
+        & {
+          padding: 2rem 1rem;
+          gap: .9rem;
+        }
+      }
+
+      @include mixin.responsive("xl") {
+        & {
+          padding: 2rem 1.5rem;
+          gap: 1rem;
+        }
+      }
+
       @include mixin.responsive("xs", $orientation: "landscape") {
         & {
           padding: 2rem .2rem;
@@ -694,7 +835,7 @@ main {
 
       div.skills {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         width: 100%;
         padding: .3rem;
@@ -703,7 +844,6 @@ main {
 
         @include mixin.responsive("xxs") {
           & {
-            justify-content: center;
             gap: 0 !important;
             padding: .2rem !important;
           }
@@ -711,14 +851,18 @@ main {
 
         @include mixin.responsive("xs") {
           & {
-            justify-content: center;
+            gap: .5rem;
+          }
+        }
+
+        @include mixin.responsive("xs") {
+          & {
             gap: .5rem;
           }
         }
 
         @include mixin.responsive("xs", $orientation: "landscape") {
           & {
-            justify-content: center;
             gap: .5rem;
           }
         }
@@ -740,6 +884,11 @@ main {
           svg {
             width: 1rem;
             height: 1rem;
+
+            @include mixin.responsive("lg") {
+              width: 1.5rem;
+              height: 1.5rem;
+            }
           }
 
           p {
@@ -748,6 +897,12 @@ main {
             @include mixin.responsive("xs") {
               & {
                 font-size: .72rem;
+              }
+            }
+
+            @include mixin.responsive("lg") {
+              & {
+                font-size: 1rem;
               }
             }
 
@@ -778,9 +933,30 @@ main {
             }
           }
 
+          @include mixin.responsive("sm") {
+            & {
+              width: 12rem;
+              height: .5rem;
+            }
+          }
+
+          @include mixin.responsive("md") {
+            & {
+              width: 13rem;
+              height: .5rem;
+            }
+          }
+
+          @include mixin.responsive("lg") {
+            & {
+              width: 15rem;
+              height: .5rem;
+            }
+          }
+
           @include mixin.responsive("xs", $orientation: "landscape") {
             & {
-              width: 9rem;
+              width: 9rem !important;
               height: .5rem;
             }
           }
@@ -805,6 +981,12 @@ main {
             @include mixin.responsive("xs") {
               & {
                 height: .5rem;
+              }
+            }
+
+            @include mixin.responsive("sm") {
+              & {
+                height: .6rem;
               }
             }
 
@@ -837,6 +1019,12 @@ main {
               }
             }
 
+            @include mixin.responsive("sm") {
+              & {
+                height: .6rem;
+              }
+            }
+
             @include mixin.responsive("xs", $orientation: "landscape") {
               & {
                 height: .5rem;
@@ -864,6 +1052,110 @@ main {
       $wth in $langs {
         div.#{$lang} div.skill-progress::after {
           width: #{$wth};
+        }
+      }
+    }
+  }
+
+  section.project-section > div.col > div.project-content {
+    width: 100%;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    div.live-projects {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: .2rem 2rem;
+      gap: 3rem;
+
+      @include mixin.responsive ("xs") {
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        padding: 0;
+      }
+
+      @include mixin.responsive ("sm") {
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        padding: 0;
+      }
+
+      @include mixin.responsive ("xs", $orientation: "landscape") {
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        padding: 0;
+      }
+
+      @include mixin.responsive ("md") {
+        flex-direction: row;
+        justify-content: center;
+        gap: 3rem;
+        padding: 0 .5rem;
+      }
+
+      @include mixin.responsive ("lg") {
+        gap: 6rem;
+      }
+
+      @include mixin.responsive ("xl") {
+        gap: 9rem;
+      }
+
+      @include mixin.responsive ("xxl") {
+        gap: 11rem;
+      }
+
+      div.project {
+        @include mixin.responsive("xs") {
+          text-align: center;
+        }
+
+        @include mixin.responsive("sm") {
+          text-align: center;
+        }
+      }
+
+      div.project > h4 {
+        font-weight: 500;
+        margin-bottom: .9rem;
+
+        @include mixin.responsive("xxs") {
+          font-size: .9rem;
+        }
+
+        @include mixin.responsive("xs") {
+          font-size: 1rem;
+        }
+      }
+
+      div.project a {
+        background-color: #0c97fa;
+        color: #fff;
+        padding: .4rem 1rem;
+        border-radius: .4rem;
+        transition: 300ms ease-in-out;
+
+        @include mixin.responsive("xxs") {
+          font-size: .8rem;
+          padding: .3rem .8rem !important;
+        }
+
+        @include mixin.responsive("xs") {
+          font-size: .8rem;
+          padding: .3rem .8rem;
+        }
+
+        &:hover {
+          background-color: #0c97fad0;
+          color: #ffffffd9;
         }
       }
     }

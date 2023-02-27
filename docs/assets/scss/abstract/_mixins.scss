@@ -8,7 +8,7 @@
 
   @else if $breakpoint ==xs {
     @if $orientation =="landscape" {
-      @media only screen and (min-device-width: 480px) and (max-device-width: 690px) and (orientation: landscape) {
+      @media only screen and (min-device-width: 480px) and (max-device-width: 900px) and (orientation: landscape) {
         @content;
       }
     }
