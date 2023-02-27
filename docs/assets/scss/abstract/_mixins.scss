@@ -1,45 +1,59 @@
 // for media quries
-@mixin responsive($breakpoint , $scope: "") {
-  @if $breakpoint ==xs {
-    @media only screen and (max-width:575.99px) {
+@mixin responsive($breakpoint , $scope: "", $orientation: "") {
+  @if $breakpoint ==xxs {
+    @media only screen and (max-device-width:370px) and (orientation: portrait) {
       @content;
     }
   }
 
-  @else if $breakpoint ==sm {
-    @if $scope =="sm-md" {
-      @media only screen and (min-width:576px) and (max-width:991.99px) {
+  @else if $breakpoint ==xs {
+    @if $orientation =="landscape" {
+      @media only screen and (min-device-width: 480px) and (max-device-width: 690px) and (orientation: landscape) {
         @content;
       }
     }
 
     @else {
-      @media only screen and (min-width:576px) {
+      @media only screen and (max-device-width:575.99px) {
+        @content;
+      }
+    }
+  }
+
+  @else if $breakpoint ==sm {
+    @if $scope =="sm-md" {
+      @media only screen and (min-device-width:576px) and (max-device-width:991.99px) {
+        @content;
+      }
+    }
+
+    @else {
+      @media only screen and (min-device-width:576px) {
         @content;
       }
     }
   }
 
   @else if $breakpoint ==md {
-    @media only screen and (min-width:768px) {
+    @media only screen and (min-device-width:768px) {
       @content;
     }
   }
 
   @else if $breakpoint ==lg {
-    @media only screen and (min-width:992px) {
+    @media only screen and (min-device-width:992px) {
       @content;
     }
   }
 
   @else if $breakpoint ==xl {
-    @media only screen and (min-width:1200px) {
+    @media only screen and (min-device-width:1200px) {
       @content;
     }
   }
 
   @else if $breakpoint ==xxl {
-    @media only screen and (min-width:1400px) {
+    @media only screen and (min-device-width:1400px) {
       @content;
     }
   }

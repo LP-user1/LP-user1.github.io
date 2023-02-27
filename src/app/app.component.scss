@@ -17,6 +17,18 @@
     padding: .6rem 2rem;
   }
 
+  @include mixin.responsive("lg") {
+    padding: .6rem 6rem;
+  }
+
+  @include mixin.responsive("xl") {
+    padding: .6rem 7rem;
+  }
+
+  @include mixin.responsive("xxl") {
+    padding: .6rem 8rem;
+  }
+
   &.nav-sticky {
     position: sticky;
     top: 0;
@@ -83,7 +95,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 6rem;
+
+      @include mixin.responsive("lg") {
+        gap: 3rem;
+      }
 
       @include mixin.responsive("xs") {
         height: 100%;
@@ -315,8 +330,20 @@ main {
       gap: 6rem;
     }
 
-    @include mixin.responsive("sm", "sm-md") {
-      gap: 2rem;
+    @include mixin.responsive("xs", $orientation: "landscape") {
+      gap: 1rem;
+    }
+
+    @include mixin.responsive("sm", $scope: "sm-md") {
+      gap: 4rem;
+    }
+
+    @include mixin.responsive("lg") {
+      gap: 4rem;
+    }
+
+    @include mixin.responsive("xl") {
+      gap: 4rem;
     }
 
 
@@ -328,9 +355,8 @@ main {
 
       }
 
-      @include mixin.responsive("sm", "sm-md") {
-        padding: 2rem 0 0 9rem;
-
+      @include mixin.responsive("xs", $orientation: "landscape") {
+        padding: .8rem 0 0 9rem !important;
       }
 
       p.greet {
@@ -390,6 +416,10 @@ main {
           font-weight: 700;
           color: #fff;
 
+          @include mixin.responsive("xxs") {
+            font-size: 1.5rem !important;
+          }
+
           @include mixin.responsive("xs") {
             font-size: 2rem;
           }
@@ -429,21 +459,18 @@ main {
     }
 
     &--bottom {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      display: grid;
+      place-items: center;
       width: 100%;
-
-      gap: .5rem;
+      transition: 300ms ease-in-out;
       animation: jump 2s linear infinite;
+
+      &.v-hide {
+        visibility: hidden;
+      }
 
       @include mixin.responsive("xs") {
         margin-top: 3.5rem;
-      }
-
-      @include mixin.responsive("sm", "sm-md") {
-        // margin-top: 3.5rem;
       }
 
       &-text {
@@ -470,6 +497,422 @@ main {
       }
 
 
+    }
+  }
+
+  // all sec
+  section:not(.hero-area) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 8rem;
+
+    @include mixin.responsive("xxs") {
+      & {
+        padding: 2rem .7rem !important;
+      }
+    }
+
+    @include mixin.responsive("xs") {
+      & {
+        padding: 2rem .8rem;
+      }
+    }
+
+    @include mixin.responsive("xs", $orientation: "landscape") {
+      & {
+        padding: 2rem 1rem;
+      }
+    }
+  }
+
+  section > div.col {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: .5rem;
+  }
+
+  section > div.col > div.sec-title {
+    display: flex;
+
+    .title {
+      position: relative;
+
+      h2 {
+        color: #000;
+        font-size: 1.1rem;
+
+        span.title-first-letter {
+          font-size: 2rem;
+        }
+
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        width: 45%;
+        height: .3rem;
+        top: 100%;
+        left: 15%;
+        border-radius: 0 0 1rem 1rem;
+        background-color: #000;
+      }
+    }
+
+  }
+
+  /*about sec */
+  & section.about-section {
+    div.about-content {
+      padding: 3rem 1.5rem;
+
+      figure {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+
+        @include mixin.responsive("xs") {
+          & {
+            flex-direction: column;
+          }
+        }
+
+        img {
+          width: 10rem;
+          border-radius: .5rem;
+          object-fit: cover;
+          aspect-ratio: 2/3;
+
+        }
+
+        figcaption {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          gap: 1.5rem;
+
+          p {
+            @include mixin.responsive("xs") {
+              & {
+                font-size: .85rem;
+              }
+            }
+          }
+
+          div.btn-sec {
+            display: flex;
+            gap: 1.5rem;
+
+            @include mixin.responsive("xs") {
+              & {
+                gap: .6rem;
+              }
+            }
+
+            a.cv {
+              padding: .5rem 1.2rem;
+              border-radius: .4rem;
+              transition: 300ms ease-in-out;
+
+              @include mixin.responsive("xs") {
+                & {
+                  padding: .4rem .7rem;
+                  font-size: .8rem;
+                }
+              }
+
+              @include mixin.responsive("xs", $orientation: "landscape") {
+                & {
+                  padding: .4rem .9rem;
+                  font-size: .9rem;
+                }
+              }
+            }
+
+            a.open-cv {
+              background-color: transparent;
+              color: #000000db;
+              border: 1px solid #000000b4;
+              text-decoration: underline;
+
+              &:hover {
+                background-color: #000000b4;
+                color: #fff;
+              }
+            }
+
+            a.download-cv {
+              background-color: #000000b4;
+              color: #fff;
+
+              &:hover {
+                background-color: #00000099;
+                color: #ffffffeb;
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  /* skill sec */
+  & section.skills-section {
+    div.skill-content {
+      display: grid;
+      place-items: center;
+      width: 100%;
+      padding: 3rem 1rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+
+      @include mixin.responsive("xxs") {
+        & {
+          padding: 2rem .2rem !important;
+          grid-template-columns: repeat(1, 1fr);
+          gap: .5rem;
+        }
+      }
+
+      @include mixin.responsive("xs") {
+        & {
+          padding: 2rem .3rem;
+          grid-template-columns: repeat(1, 1fr);
+          gap: .5rem;
+        }
+      }
+
+      @include mixin.responsive("xs", $orientation: "landscape") {
+        & {
+          padding: 2rem .2rem;
+          gap: .5rem;
+        }
+      }
+
+      div.skills {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: .3rem;
+        box-shadow: 0 0 4px 0 #0000003b;
+        border-radius: .3rem;
+
+        @include mixin.responsive("xxs") {
+          & {
+            justify-content: center;
+            gap: 0 !important;
+            padding: .2rem !important;
+          }
+        }
+
+        @include mixin.responsive("xs") {
+          & {
+            justify-content: center;
+            gap: .5rem;
+          }
+        }
+
+        @include mixin.responsive("xs", $orientation: "landscape") {
+          & {
+            justify-content: center;
+            gap: .5rem;
+          }
+        }
+
+        div.skills-head {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          gap: .5rem;
+
+          @include mixin.responsive("xxs") {
+            & {
+              width: 70% !important;
+            }
+          }
+
+          svg {
+            width: 1rem;
+            height: 1rem;
+          }
+
+          p {
+            font-size: .8rem;
+
+            @include mixin.responsive("xs") {
+              & {
+                font-size: .72rem;
+              }
+            }
+
+            @include mixin.responsive("xs", $orientation: "landscape") {
+              & {
+                font-size: .77rem;
+              }
+            }
+          }
+        }
+
+        div.skill-progress {
+          width: 20rem;
+          height: 1rem;
+          position: relative;
+
+          @include mixin.responsive("xxs") {
+            & {
+              width: 6rem !important;
+              height: .5rem;
+            }
+          }
+
+          @include mixin.responsive("xs") {
+            & {
+              width: 12rem;
+              height: .5rem;
+            }
+          }
+
+          @include mixin.responsive("xs", $orientation: "landscape") {
+            & {
+              width: 9rem;
+              height: .5rem;
+            }
+          }
+
+
+          &::before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            background-color: #00000023;
+            width: 100%;
+            height: 1rem;
+            border-radius: .2rem;
+
+            @include mixin.responsive("xxs") {
+              & {
+                height: .5rem;
+              }
+            }
+
+            @include mixin.responsive("xs") {
+              & {
+                height: .5rem;
+              }
+            }
+
+            @include mixin.responsive("xs", $orientation: "landscape") {
+              & {
+                height: .5rem;
+              }
+            }
+          }
+
+          &::after {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            background-color: #000000d1;
+            height: 1rem;
+            border-radius: .2rem;
+            clip-path: polygon(0 0, 100% 0%, 84% 100%, 0% 100%);
+
+            @include mixin.responsive("xxs") {
+              & {
+                height: .5rem;
+              }
+            }
+
+            @include mixin.responsive("xs") {
+              & {
+                height: .5rem;
+              }
+            }
+
+            @include mixin.responsive("xs", $orientation: "landscape") {
+              & {
+                height: .5rem;
+              }
+            }
+          }
+
+        }
+
+        div.skill-percentage {
+          width: 100%;
+          text-align: center;
+
+          @include mixin.responsive("xxs") {
+            & {
+              width: 50%;
+            }
+          }
+        }
+      }
+
+      $langs: 'ng' '54%', 'html' '85%', 'css' '80%', 'js' '50%', 'sass' '65%', 'github' '45%', 'vs-code' '70%', 'dj' '60%', 'bs' '75%', 'git' '45%', 'mysql' '55%', 'py' '55%';
+
+      @each $lang,
+      $wth in $langs {
+        div.#{$lang} div.skill-progress::after {
+          width: #{$wth};
+        }
+      }
+    }
+  }
+
+  section.contact-section > div.col > div.contact-content {
+    width: 100%;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+
+    h2 {
+      font-weight: 400;
+
+      @include mixin.responsive("xs", $orientation: "landscape") {
+        font-size: 1rem;
+      }
+
+      @include mixin.responsive("xxs") {
+        font-size: 1rem !important;
+      }
+
+      @include mixin.responsive("xs") {
+        font-size: 1.2rem;
+      }
+    }
+
+    & > a > svg {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      padding: .5rem;
+      box-shadow: 0 0 .9rem 0 #00000041;
+    }
+
+    ul.contact-social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+
+      li > a > svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
     }
   }
 }

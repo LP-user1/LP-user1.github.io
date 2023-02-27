@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'LP | Portfolio';
   showNav: boolean = false;
   navSticky: boolean = false;
+
   @HostListener('window:scroll', ['$event']) onscroll() {
     if (window.scrollY > 160) {
       this.navSticky = true;
@@ -21,6 +22,12 @@ export class AppComponent {
       this.showNav = true;
     } else {
       this.showNav = false;
+    }
+  }
+  // nav cls when then nav link btn clicked
+  navCls(action: boolean): void {
+    if (this.showNav == true) {
+      this.showNav = action;
     }
   }
 }
