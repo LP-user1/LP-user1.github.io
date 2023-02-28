@@ -33,16 +33,17 @@
     position: sticky;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.953);
-    box-shadow: 0 0 5px #ffffff5c;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 8px #00000071;
     transition: 300ms ease-in-out;
 
     @include mixin.responsive("xs") {
-      background: linear-gradient(to right, rgba(0, 0, 0, 0.953), rgba(0, 0, 0, 0.593));
+      // background: linear-gradient(to right, rgba(0, 0, 0, 0.953), rgba(0, 0, 0, 0.593));
+      background-color: #fff;
     }
 
     @include mixin.responsive("sm", "sm-md") {
-      background: linear-gradient(to right, rgba(0, 0, 0, 0.953), rgba(0, 0, 0, 0.593));
+      background-color: #fff;
     }
 
   }
@@ -55,8 +56,35 @@
     & > a {
       font-family: var.$font-shadow;
       font-size: 1.4rem;
-      // color: #000;
       color: #ffffffdc;
+
+      &.dark {
+        color: #000 !important;
+      }
+
+      @include mixin.responsive("xs") {
+        color: #ffffff;
+
+        &.dark {
+          color: #000 !important;
+        }
+      }
+
+      @include mixin.responsive("xs", $orientation: "landscape") {
+        color: #ffffff;
+
+        &.dark {
+          color: #000 !important;
+        }
+      }
+
+      @include mixin.responsive("sm", "sm-md") {
+        color: #ffffff;
+
+        &.dark {
+          color: #000 !important;
+        }
+      }
 
       & > span {
         font-size: .9rem;
@@ -64,6 +92,11 @@
 
       &:hover {
         color: rgba(169, 211, 253, 0.927);
+        transition: 300ms;
+      }
+
+      &.dark:hover {
+        color: rgb(34, 144, 255) !important;
         transition: 300ms;
       }
     }
@@ -87,7 +120,35 @@
 
       & > svg {
         width: 1.5rem;
-        color: #fff;
+        color: #ffffffdc;
+
+        &.dark {
+          color: #000 !important;
+        }
+
+        @include mixin.responsive("xs") {
+          color: #ffffff;
+
+          &.dark {
+            color: #000 !important;
+          }
+        }
+
+        @include mixin.responsive("xs", $orientation: "landscape") {
+          color: #ffffff;
+
+          &.dark {
+            color: #000 !important;
+          }
+        }
+
+        @include mixin.responsive("sm", "sm-md") {
+          color: #ffffff;
+
+          &.dark {
+            color: #000 !important;
+          }
+        }
       }
     }
 
@@ -115,8 +176,7 @@
         gap: 0;
         overflow-y: auto;
         z-index: 20;
-        // box-shadow: 5px 12px 17px 0px rgb(0 0 0 / 38%);
-        box-shadow: 5px 12px 17px 0px rgba(255, 255, 255, 0.764);
+        box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.764);
         transition: 400ms ease-in-out;
 
         &.show-nav {
@@ -139,8 +199,7 @@
         align-items: center;
         gap: 2rem;
         z-index: 20;
-        // box-shadow: 5px 12px 17px 0px rgb(0 0 0 / 38%);
-        box-shadow: 5px 12px 17px 0px rgba(255, 255, 255, 0.598);
+        box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.764);
         transition: 400ms ease-in-out;
 
         &.show-nav {
@@ -158,6 +217,12 @@
           width: 100%;
           justify-content: flex-end;
           align-items: flex-end;
+        }
+
+        @include mixin.responsive("xs", $orientation: "landscape") {
+          position: sticky;
+          top: 5%;
+          right: 5%;
         }
 
         @include mixin.responsive("sm", "sm-md") {
@@ -203,9 +268,13 @@
           & a {
             padding: .5rem .7rem;
             // color: #000;
-            color: #ffffffdc;
+            color: #ffffffea;
             display: flex;
             align-items: center;
+
+            &.dark-li {
+              color: #000 !important;
+            }
 
             @include mixin.responsive("xs") {
               color: #000;
@@ -229,12 +298,16 @@
                 color: #ffffffb1;
 
                 @include mixin.responsive("xs") {
-                  color: rgba(0, 0, 0, 0.546);
+                  color: #000000cc;
                 }
 
                 @include mixin.responsive("sm", "sm-md") {
-                  color: rgba(0, 0, 0, 0.546);
+                  color: #000000cc;
                 }
+              }
+
+              &.dark-li:hover:not(.mail-link, .active) {
+                color: #0000009b !important;
               }
 
               &:not(.mail-link)::after {
@@ -258,13 +331,61 @@
 
             &.mail-link {
               padding: .2rem 1.4rem;
-              background-color: rgba(30, 143, 255, 0.891);
+              background-color: transparent;
               border-radius: .4rem;
               color: #fff;
+              border: 1px solid #fff;
+              text-decoration: underline;
+
+              @include mixin.responsive("xs") {
+                color: #1e8fffe3;
+                border: 1px solid #1e8fffe3;
+              }
+
+              @include mixin.responsive("xs", $orientation: "landscape") {
+                color: #1e8fffe3;
+                border: 1px solid #1e8fffe3;
+              }
+
+              @include mixin.responsive("sm", "sm-md") {
+                color: #1e8fffe3;
+                border: 1px solid #1e8fffe3;
+              }
+
+              &.dark-m {
+                color: #1e8fffe3 !important;
+                border: 1px solid #1e8fffe3 !important;
+              }
 
               &:hover:not(.active),
               &.active {
-                background-color: rgba(30, 143, 255, 0.612);
+                background-color: #fff;
+                color: #000;
+
+                @include mixin.responsive("xs") {
+                  background-color: #1e8fffe3;
+                  color: #fff;
+                  border-color: #1e8fffe3;
+                }
+
+                @include mixin.responsive("xs", $orientation: "landscape") {
+                  background-color: #1e8fffe3;
+                  color: #fff;
+                  border-color: #1e8fffe3;
+                }
+
+                @include mixin.responsive("sm", "sm-md") {
+                  background-color: #1e8fffe3;
+                  color: #fff;
+                  border-color: #1e8fffe3;
+                }
+              }
+
+              &.dark-m:hover:not(.active),
+              &.active {
+                background-color: #1e8fffe3 !important;
+                color: #fff !important;
+                border-color: #1e8fffe3 !important;
               }
             }
           }
@@ -505,53 +626,53 @@ main {
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 2rem 8rem;
+    padding: 1rem 8rem;
 
     @include mixin.responsive("xxs") {
       & {
-        padding: 2rem .7rem !important;
+        padding: 1rem .7rem !important;
       }
     }
 
     @include mixin.responsive("xs") {
       & {
-        padding: 2rem 1rem;
+        padding: 1rem 1rem;
       }
     }
 
     @include mixin.responsive("xs", $orientation: "landscape") {
       & {
-        padding: 2rem 1rem;
+        padding: 1rem 1rem;
       }
     }
 
     @include mixin.responsive("sm") {
       & {
-        padding: 2rem 1rem;
+        padding: 1rem 1rem;
       }
     }
 
     @include mixin.responsive("md") {
       & {
-        padding: 2rem 1.2rem;
+        padding: 1rem 1.2rem;
       }
     }
 
     @include mixin.responsive("lg") {
       & {
-        padding: 2rem 2.5rem;
+        padding: 1rem 2.5rem;
       }
     }
 
     @include mixin.responsive("xl") {
       & {
-        padding: 2rem 5rem;
+        padding: 1rem 5rem;
       }
     }
 
     @include mixin.responsive("xxl") {
       & {
-        padding: 2rem 9rem;
+        padding: 1rem 9rem;
       }
     }
   }
@@ -1137,8 +1258,10 @@ main {
       }
 
       div.project a {
-        background-color: #0c97fa;
-        color: #fff;
+        background-color: transparent;
+        color: #0691f4;
+        border: 1px solid #0691f4;
+        text-decoration: underline;
         padding: .4rem 1rem;
         border-radius: .4rem;
         transition: 300ms ease-in-out;
@@ -1154,8 +1277,8 @@ main {
         }
 
         &:hover {
-          background-color: #0c97fad0;
-          color: #ffffffd9;
+          background-color: #0691f4;
+          color: #ffffff;
         }
       }
     }

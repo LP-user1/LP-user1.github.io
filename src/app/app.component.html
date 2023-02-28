@@ -5,11 +5,14 @@
   [ngClass]="navSticky ? 'nav-sticky' : ''"
 >
   <div class="header-container">
-    <a href="/" title="Portfolio Home">PRASATH <span>( LP )</span></a>
+    <a href="/" title="Portfolio Home" [ngClass]="navSticky ? 'dark' : ''"
+      >PRASATH <span>( LP )</span></a
+    >
     <div class="header-container--menu menu" (click)="navToggle(true)">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="ionicon"
+        [ngClass]="navSticky ? 'dark' : ''"
         viewBox="0 0 512 512"
       >
         <path
@@ -45,21 +48,42 @@
       </div>
       <ul class="nav">
         <li class="nav-item" (click)="navCls(false)">
-          <a href="#home" class="nav-item-link page-link">Home</a>
+          <a
+            href="#home"
+            class="nav-item-link page-link"
+            [ngClass]="navSticky ? 'dark-li' : ''"
+            >Home</a
+          >
         </li>
         <li class="nav-item" (click)="navCls(false)">
-          <a href="#about" class="nav-item-link page-link">About</a>
+          <a
+            href="#about"
+            class="nav-item-link page-link"
+            [ngClass]="navSticky ? 'dark-li' : ''"
+            >About</a
+          >
         </li>
         <li class="nav-item" (click)="navCls(false)">
-          <a href="#skill" class="nav-item-link page-link">Expertise</a>
+          <a
+            href="#skill"
+            class="nav-item-link page-link"
+            [ngClass]="navSticky ? 'dark-li' : ''"
+            >Expertise</a
+          >
         </li>
         <li class="nav-item" (click)="navCls(false)">
-          <a href="#project" class="nav-item-link page-link">Projects</a>
+          <a
+            href="#project"
+            class="nav-item-link page-link"
+            [ngClass]="navSticky ? 'dark-li' : ''"
+            >Projects</a
+          >
         </li>
         <li class="nav-item" (click)="navCls(false)">
           <a
             href="mailto:maildotlpv@gmail.com"
             class="nav-item-link page-link mail-link"
+            [ngClass]="navSticky ? 'dark-m' : ''"
             title="Send message directly through Email"
             >E-Mail</a
           >
@@ -451,6 +475,14 @@
             >
           </div>
         </div>
+        <!-- <div class="repo-projects">
+          <div class="repoProject">
+            <h3></h3>
+          </div>
+          <div class="repoProject">
+            <h3></h3>
+          </div>
+        </div> -->
       </div>
     </div>
   </section>
