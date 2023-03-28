@@ -64,6 +64,7 @@
 
       @include mixin.responsive("xs") {
         color: #ffffff;
+        font-size: 1.1rem;
 
         &.dark {
           color: #000 !important;
@@ -72,6 +73,7 @@
 
       @include mixin.responsive("xs", $orientation: "landscape") {
         color: #ffffff;
+        font-size: 1.2rem;
 
         &.dark {
           color: #000 !important;
@@ -437,7 +439,7 @@ main {
 
   /* hero area */
   .hero-area {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.757), rgba(0, 0, 0, 0.663)), url('../assets/laptop.jpg');
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.596), rgba(0, 0, 0, 0.523)), url('^assets/laptop.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -905,7 +907,7 @@ main {
       @include mixin.responsive("xxs") {
         & {
           padding: 2rem .2rem !important;
-          grid-template-columns: repeat(1, 1fr);
+          grid-template-columns: repeat(2, 1fr);
           gap: .5rem;
         }
       }
@@ -913,7 +915,7 @@ main {
       @include mixin.responsive("xs") {
         & {
           padding: 2rem .3rem;
-          grid-template-columns: repeat(1, 1fr);
+          grid-template-columns: repeat(2, 1fr);
           gap: .5rem;
         }
       }
@@ -921,7 +923,7 @@ main {
       @include mixin.responsive("sm") {
         & {
           padding: 2rem .3rem;
-          grid-template-columns: repeat(1, 1fr);
+          grid-template-columns: repeat(2, 1fr);
           gap: .7rem;
         }
       }
@@ -929,7 +931,7 @@ main {
       @include mixin.responsive("md") {
         & {
           padding: 2rem .8rem;
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: repeat(3, 1fr);
           gap: .7rem;
         }
       }
@@ -937,6 +939,7 @@ main {
       @include mixin.responsive("lg") {
         & {
           padding: 2rem 1rem;
+          // grid-template-columns: repeat(3, 1fr);
           gap: .9rem;
         }
       }
@@ -944,6 +947,7 @@ main {
       @include mixin.responsive("xl") {
         & {
           padding: 2rem 1.5rem;
+          grid-template-columns: repeat(4, 1fr);
           gap: 1rem;
         }
       }
@@ -1036,146 +1040,26 @@ main {
           }
         }
 
-        div.skill-progress {
-          width: 20rem;
-          height: 1rem;
-          position: relative;
+        // div.skill-percentage {
+        //   width: 100%;
+        //   text-align: center;
 
-          @include mixin.responsive("xxs") {
-            & {
-              width: 6rem !important;
-              height: .5rem;
-            }
-          }
-
-          @include mixin.responsive("xs") {
-            & {
-              width: 12rem;
-              height: .5rem;
-            }
-          }
-
-          @include mixin.responsive("sm") {
-            & {
-              width: 12rem;
-              height: .5rem;
-            }
-          }
-
-          @include mixin.responsive("md") {
-            & {
-              width: 13rem;
-              height: .5rem;
-            }
-          }
-
-          @include mixin.responsive("lg") {
-            & {
-              width: 15rem;
-              height: .5rem;
-            }
-          }
-
-          @include mixin.responsive("xs", $orientation: "landscape") {
-            & {
-              width: 9rem !important;
-              height: .5rem;
-            }
-          }
-
-
-          &::before {
-            position: absolute;
-            content: '';
-            top: 0;
-            left: 0;
-            background-color: #00000023;
-            width: 100%;
-            height: 1rem;
-            border-radius: .2rem;
-
-            @include mixin.responsive("xxs") {
-              & {
-                height: .5rem;
-              }
-            }
-
-            @include mixin.responsive("xs") {
-              & {
-                height: .5rem;
-              }
-            }
-
-            @include mixin.responsive("sm") {
-              & {
-                height: .6rem;
-              }
-            }
-
-            @include mixin.responsive("xs", $orientation: "landscape") {
-              & {
-                height: .5rem;
-              }
-            }
-          }
-
-          &::after {
-            position: absolute;
-            content: '';
-            top: 0;
-            left: 0;
-            background-color: #000000d1;
-            height: 1rem;
-            border-radius: .2rem;
-            clip-path: polygon(0 0, 100% 0%, 84% 100%, 0% 100%);
-
-            @include mixin.responsive("xxs") {
-              & {
-                height: .5rem;
-              }
-            }
-
-            @include mixin.responsive("xs") {
-              & {
-                height: .5rem;
-              }
-            }
-
-            @include mixin.responsive("sm") {
-              & {
-                height: .6rem;
-              }
-            }
-
-            @include mixin.responsive("xs", $orientation: "landscape") {
-              & {
-                height: .5rem;
-              }
-            }
-          }
-
-        }
-
-        div.skill-percentage {
-          width: 100%;
-          text-align: center;
-
-          @include mixin.responsive("xxs") {
-            & {
-              width: 50%;
-            }
-          }
-        }
+        //   @include mixin.responsive("xxs") {
+        //     & {
+        //       width: 50%;
+        //     }
+        //   }
+        // }
       }
 
-      $langs: 'ng' '54%', 'html' '85%', 'css' '80%', 'js' '50%', 'sass' '65%', 'github' '45%', 'vs-code' '70%', 'dj' '60%', 'bs' '75%', 'git' '45%', 'mysql' '55%', 'py' '55%';
+      // $langs: 'ng' '54%', 'html' '85%', 'css' '80%', 'js' '50%', 'sass' '65%', 'github' '45%', 'vs-code' '70%', 'dj' '60%', 'bs' '75%', 'git' '45%', 'mysql' '55%', 'py' '55%';
 
-      @each $lang,
-      $wth in $langs {
-        div.#{$lang} div.skill-progress::after {
-          width: #{$wth};
-        }
-      }
+      // @each $lang,
+      // $wth in $langs {
+      //   div.#{$lang} div.skill-progress::after {
+      //     width: #{$wth};
+      //   }
+      // }
     }
   }
 
@@ -1187,122 +1071,136 @@ main {
     justify-content: space-between;
     align-items: center;
 
+    @include mixin.responsive ("xs") {
+      padding: 2rem .5rem;
+    }
+
+    @include mixin.responsive ("sm") {
+      padding: 2rem .7rem;
+    }
+
     h2 {
       font-weight: 500;
       text-align: start;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       text-decoration: underline;
     }
 
-    div.live-projects,
-    div.repo-projects {
+    div.live-pjt,
+    div.nolive-pjt {
       width: 100%;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
       padding: .2rem 2rem;
-      gap: 3rem;
       margin-bottom: 2rem;
 
       @include mixin.responsive ("xs") {
-        flex-direction: column;
-        justify-content: center;
-        gap: 2rem;
-        padding: 0;
+        padding: .2rem .5rem;
       }
 
       @include mixin.responsive ("sm") {
-        flex-direction: column;
-        justify-content: center;
-        gap: 2rem;
-        padding: 0;
+        padding: .2rem .7rem;
       }
 
-      @include mixin.responsive ("xs", $orientation: "landscape") {
-        flex-direction: column;
-        justify-content: center;
-        gap: 2rem;
-        padding: 0;
-      }
+      @include mixin.responsive ("xs", $orientation: "landscape") {}
 
-      @include mixin.responsive ("md") {
-        flex-direction: row;
-        justify-content: center;
-        gap: 3rem;
-        padding: 0 .5rem;
-      }
+      .pjt {
+        padding-left: 1rem;
 
-      @include mixin.responsive ("lg") {
-        gap: 6rem;
-      }
-
-      @include mixin.responsive ("xl") {
-        gap: 9rem;
-      }
-
-      @include mixin.responsive ("xxl") {
-        gap: 11rem;
-      }
-
-      div.project,
-      div.repoProject {
-        @include mixin.responsive("xs") {
-          text-align: center;
+        @include mixin.responsive ("xs") {
+          padding: 0;
         }
 
-        @include mixin.responsive("sm") {
-          text-align: center;
-        }
-      }
-
-      div.project > h3,
-      div.repoProject > h3 {
-        font-weight: 400;
-        margin-bottom: .9rem;
-        color: #000;
-
-        @include mixin.responsive("xxs") {
-          font-size: .9rem;
+        @include mixin.responsive ("sm") {
+          padding: 0;
         }
 
-        @include mixin.responsive("xs") {
-          font-size: 1rem;
-        }
-      }
-
-      div.project a,
-      div.repoProject a {
-        background-color: transparent;
-        color: #0691f4;
-        border: 1px solid #0691f4;
-        text-decoration: underline;
-        padding: .4rem 1rem;
-        border-radius: .4rem;
-        transition: 300ms ease-in-out;
-
-        @include mixin.responsive("xxs") {
-          font-size: .8rem;
-          padding: .3rem .8rem !important;
+        @include mixin.responsive ("md") {
+          padding-left: .5rem;
         }
 
-        @include mixin.responsive("xs") {
-          font-size: .8rem;
-          padding: .3rem .8rem;
+        @include mixin.responsive ("lg") {
+          padding-left: .8rem;
         }
 
-        &:hover {
-          background-color: #0691f4;
-          color: #ffffff;
+        @include mixin.responsive ("xl") {
+          padding-left: 1rem;
         }
-      }
 
-      div.repoProject a {
-        color: #000 !important;
-        border-color: #000 !important;
+        h4 {
+          font-weight: 400;
+          font-size: 1.2rem;
+          margin-top: .8rem;
 
-        &:hover {
-          background-color: #000 !important;
-          color: #fff !important;
+          @include mixin.responsive ("xs") {
+            font-size: .8rem;
+          }
+
+          @include mixin.responsive ("sm") {
+            font-size: .8rem;
+          }
+
+          @include mixin.responsive ("md") {
+            font-size: 1rem;
+          }
+
+          @include mixin.responsive ("lg") {
+            font-size: 1.1rem;
+          }
+
+          @include mixin.responsive ("xl") {
+            font-size: 1.2rem;
+          }
+
+        }
+
+        p {
+          color: #000000d4;
+          margin-bottom: .5rem;
+
+          @include mixin.responsive ("xs") {
+            font-size: .7rem;
+          }
+
+          @include mixin.responsive ("sm") {
+            font-size: .8rem;
+          }
+        }
+
+        ul > li {
+          margin-left: 2rem;
+
+          @include mixin.responsive ("xs") {
+            font-size: .7rem;
+          }
+
+          @include mixin.responsive ("sm") {
+            font-size: .8rem;
+          }
+
+          @include mixin.responsive ("md") {
+            font-size: .9rem;
+          }
+
+          a {
+            color: #0015d4 !important;
+            text-decoration: underline !important;
+            transition: 300ms !important;
+
+            @include mixin.responsive ("xs") {
+              font-size: .7rem;
+            }
+
+            @include mixin.responsive ("sm") {
+              font-size: .8rem;
+            }
+
+            @include mixin.responsive ("md") {
+              font-size: 1rem;
+            }
+
+            &:hover {
+              color: #00000085 !important;
+            }
+          }
         }
       }
     }
