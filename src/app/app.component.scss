@@ -923,7 +923,7 @@ main {
       @include mixin.responsive("sm") {
         & {
           padding: 2rem .3rem;
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: repeat(3, 1fr);
           gap: .7rem;
         }
       }
@@ -939,7 +939,7 @@ main {
       @include mixin.responsive("lg") {
         & {
           padding: 2rem 1rem;
-          // grid-template-columns: repeat(3, 1fr);
+          // grid-template-columns: repeat(4, 1fr);
           gap: .9rem;
         }
       }
@@ -947,7 +947,7 @@ main {
       @include mixin.responsive("xl") {
         & {
           padding: 2rem 1.5rem;
-          grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: repeat(5, 1fr);
           gap: 1rem;
         }
       }
@@ -1135,7 +1135,7 @@ main {
           }
 
           @include mixin.responsive ("sm") {
-            font-size: .8rem;
+            font-size: .9rem;
           }
 
           @include mixin.responsive ("md") {
@@ -1161,6 +1161,9 @@ main {
           }
 
           @include mixin.responsive ("sm") {
+            font-size: .7rem;
+          }
+	  @include mixin.responsive ("md") {
             font-size: .8rem;
           }
         }
